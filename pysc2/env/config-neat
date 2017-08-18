@@ -3,7 +3,7 @@
 # The `NEAT` section specifies parameters particular to the NEAT algorithm
 # or the experiment itself.  This is the only required section.
 [NEAT]
-fitness_criterion     = min
+fitness_criterion     = mean
 fitness_threshold     = 150.0
 pop_size              = 100
 reset_on_extinction   = 0
@@ -12,8 +12,8 @@ reset_on_extinction   = 0
 num_inputs              = 512
 num_hidden              = 16
 num_outputs             = 4
-initial_connection      = partial_direct 0.5
-feed_forward            = True
+# initial_connection      = partial_direct 0.5
+feed_forward            = False
 compatibility_disjoint_coefficient    = 1.0
 compatibility_weight_coefficient      = 0.6
 conn_add_prob           = 0.2
@@ -56,7 +56,7 @@ compatibility_threshold = 3.0
 
 [DefaultStagnation]
 species_fitness_func = max
-max_stagnation  = 20
+max_stagnation  = 100
 
 [DefaultReproduction]
 elitism            = 2
